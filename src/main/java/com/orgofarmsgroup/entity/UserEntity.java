@@ -1,8 +1,6 @@
 package com.orgofarmsgroup.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,6 +20,16 @@ public class UserEntity implements Serializable {
     public static final long serialVersionUID = -998877665544L;
 
     @Id
+    @SequenceGenerator(
+            name = "uid_seq_generator",
+            sequenceName = "uid_seq_generator",
+            initialValue = 101,
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.AUTO,
+            generator = "uid_seq_generator"
+    )
     private Long uid;
     private String name;
     private String email;

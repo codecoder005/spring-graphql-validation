@@ -3,7 +3,6 @@ extend type Query {
 }
 
 extend type Mutation {
-#    post(user: UserInput): User
     users: UserOperations
 }
 type UserOperations {
@@ -20,7 +19,6 @@ type User {
     email: String
 }
 input UserInput {
-    uid: ID
     name: String!
     email: String!
 }
