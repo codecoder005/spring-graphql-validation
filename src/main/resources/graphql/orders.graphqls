@@ -1,0 +1,17 @@
+extend type Query {
+    orders: [Order]
+}
+extend type Mutation {
+    orders(order: OrderInput): Order
+}
+
+input OrderInput {
+    oid: ID!
+    customer: String!
+    amount: Float!
+}
+type Order {
+    oid: ID
+    customer: String
+    amount: Float
+}

@@ -1,0 +1,23 @@
+extend type Mutation {
+    validation(object: ValidationInputFieldsObject!): ValidationOutputFieldsObject
+    check(name: String): String
+    list(sids: [ID !]!): [ID]
+}
+input ValidationInputFieldsObject {
+    sid: ID
+    name: String
+    gender: String
+    email: String
+    age: Int
+    salary: Float
+    isMarried: Boolean
+}
+type ValidationOutputFieldsObject {
+    sid: ID
+    name: String
+    gender: String
+    email: String
+    age: Int
+    salary: Float
+    isMarried: Boolean
+}

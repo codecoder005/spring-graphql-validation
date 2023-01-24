@@ -1,0 +1,11 @@
+logging:
+  level:
+    org:
+      springframework: WARN
+      hibernate: WARN
+      apache: WARN
+    com.zaxxer: WARN
+
+
+server:
+  port: 9090
